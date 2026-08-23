@@ -1,3 +1,4 @@
+DEMO VIDEO:https://1drv.ms/v/c/32f5d0d6bb814108/IQBgzwhX0UoETbFBjKKle30NAVxor5hYvRQkk2yysoEAUxI?e=fiqssz
 # Smart Resume Screener
 
 AI-powered resume screening and ATS scoring app for recruiters and hiring teams.
