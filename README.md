@@ -143,6 +143,48 @@ http://localhost:5173
 
 ---
 
+## Deployment Guide
+
+### Option 1: Full-Stack Vercel Deployment (Recommended)
+
+This repository includes `vercel.json` configured for a unified deployment (Frontend + Serverless Express API):
+
+1. Go to [Vercel Dashboard](https://vercel.com/new).
+2. Connect your GitHub account and import the repository: **`raghavendra57/ResumeScanner`**.
+3. In the project configuration:
+   - **Framework Preset**: Vite / Other
+   - **Root Directory**: `./` (leave default)
+4. Add the following **Environment Variables** in Vercel:
+   - `GEMINI_API_KEY`: Your Google Gemini API Key
+   - `MONGODB_URI`: Your MongoDB Atlas Connection String
+5. Click **Deploy**. Vercel will automatically build the React frontend and deploy the Express API routes under `/api/*`.
+
+---
+
+### Option 2: Render (Backend) + Vercel (Frontend)
+
+#### Backend on Render:
+1. Go to [Render Dashboard](https://dashboard.render.com/) -> **New Web Service**.
+2. Connect **`raghavendra57/ResumeScanner`**.
+3. Settings:
+   - **Root Directory**: `backend`
+   - **Build Command**: `npm install`
+   - **Start Command**: `npm start`
+4. Add Environment Variables:
+   - `PORT`: `5000`
+   - `GEMINI_API_KEY`: `your_gemini_api_key`
+   - `MONGODB_URI`: `your_mongodb_uri`
+5. Copy your Render Backend URL (e.g. `https://resume-scanner-api.onrender.com`).
+
+#### Frontend on Vercel:
+1. Import **`raghavendra57/ResumeScanner`** into Vercel.
+2. Set **Root Directory** to `frontend`.
+3. Add Environment Variable:
+   - `VITE_API_URL`: `https://resume-scanner-api.onrender.com`
+4. Deploy!
+
+---
+
 ## API Endpoints
 
 ### Resume analysis
